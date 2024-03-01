@@ -1,4 +1,4 @@
-*, *::before, *::after {box-sizing: border-box;}
+/* *, *::before, *::after {box-sizing: border-box;} */
 
 body {
     margin: 0;
@@ -11,18 +11,12 @@ body {
     color: rgb(223, 223, 223);
 }
 
-h1, 
-p {
-    /* padding: 0;
-    margin: 0; */
-}
-
 .card {
-    height: 90%;
+    min-height: 90%;
     max-width: 800px;
     width: 80%;
     display: grid;
-    grid-template: 200px 2em auto auto 100px 1em / 1em auto auto 1em;
+    grid-template: 200px 3em auto auto 150px 1em / 1em 1fr 1fr 1em;
     text-align: center;
     background-color: #111d4a;
 }
@@ -37,13 +31,17 @@ img {
 
 h1 {
     grid-row: 3;
-    grid-column: 1 / -1;
+    grid-column: 2 / -1;
     font-size: 1.75rem;
+}
+
+.vs-text {
+    display: block;
 }
 
 .date {
     grid-row: 4;
-    grid-column: 1 / -1;
+    grid-column: 2 / -1;
 }
 
 .time {
@@ -59,40 +57,72 @@ h1 {
     font-size: 1.25rem;
 }
 
-span {
+.time-text {
     display: block;
 }
 
-.time-text {
+.time-text,
+.date-text {
     font-weight: 900;
 }
 
-button {
+a:link,
+a:visited {
     grid-column: 3 / 4;
     grid-row: 5;
     align-self: end;
     justify-self: end;
     background-color: #05cbe9;
-    border: none;
     padding: .5em .7em;
-    font-family: inherit;
+    text-decoration: none;
+    color: #111d4a;
     font-weight: 900;
-    font-size: 1.25rem;
 }
 
-button:hover,
-button:focus {
-    cursor: pointer;
+a:hover,
+a:active {
     transition: 0.5s;
     background-color: lightgreen;
+    color: black;
 }
 
-a {
-    grid-column: 3 / 4;
-    grid-row: 5;
-    align-self: end;
-    justify-self: end;
-    /* background-color: #05cbe9; */
-    text-decoration: none;
+/* Media queries */
+@media (min-width: 650px) {
+    .card {
+        grid-template: 300px 1em auto auto 100px 1em / 1em auto auto 1em;
+    }
+
+    .vs-text {
+        display: inline;
+    }
+
 }
+
+@media (min-width: 768px) {
+    .card {
+        grid-template: auto auto auto auto / 200px auto 200px;
+        min-width: 90vw;
+    }
+
+    .first-img {
+        grid-template-columns: 1 / 2;
+    }
+
+    h1 {
+        grid-template-columns: 2 / 3;
+    }
+
+    .date {
+        grid-template-columns: 2 / 3;
+    }
+
+    .time {
+        grid-template-columns: 2 / 3;
+    }
+
+    a {
+        grid-template-columns: 2 / 3;
+    }
+}
+
 
