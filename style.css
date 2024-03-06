@@ -119,9 +119,9 @@ a:active {
     }
 
     .card {
-        grid-template: 200px auto auto auto / 200px auto 200px;
+        grid-template: 150px auto auto auto / 250px auto 250px;
         min-width: 90vw;
-        min-height: 90vh;
+        min-height: 80vh;
     }
 
     .first-img {
@@ -136,27 +136,31 @@ a:active {
         grid-row: 1 / -1;
         background-image: url("images/field.jpg");
         background-size: cover;
-        /* background-position: ; */
     }
 
     h1 {
+        font-size: 3vw;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        align-self: center;
     }
 
     .date {
+        font-size: 2vw;
         grid-column: 2 / 3;
         grid-row: 2 / 3;
     }
 
     .time {
+        font-size: 2vw;
         grid-column: 2 / 3;
         grid-row: 3 / 4;
         justify-self: center;
+        align-self: start;
     }
 
-    .time-text {
-        display: inline;
+    .date-text {
+        display: block;
     }
 
     a:link,
@@ -164,6 +168,8 @@ a:active {
         grid-column: 2 / 3;
         grid-row: 4 / 5;
         justify-self: center;
+        align-self: center;
+        padding: 1em 1.2em;
     }
 }
 
